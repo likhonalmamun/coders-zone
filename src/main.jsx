@@ -2,18 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Topics from "./Components/Topics/Topics";
+import Home from "./Components/Home/Home";
 import Statistics from "./Components/Statistics/Statistics";
 import Error from "./Error";
+import Blogs from "./Components/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>, errorElement: <Error></Error>,
+    element: <App></App>,
+    errorElement: <Error></Error>,
     children: [
-      { path: "/", element: <Topics></Topics>  },
+      {
+        path: "/Home",
+        index: true,
+        element: <Home></Home>,
+        loader: async () =>
+          fetch("https://openapi.programming-hero.com/api/quiz"),
+      },
       { path: "/Statistics", element: <Statistics></Statistics> },
-      // { path: "/Blogs", element : <Error></Error>  },
+      { path: "/Blogs", element: <Blogs></Blogs> },
     ],
   },
 ]);
