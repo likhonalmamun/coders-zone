@@ -15,9 +15,9 @@ const Home = () => {
           to="/github-account"
           className="text-2xl font-bold py-5 px-10 hover:bg-transparent duration-200 hover:border-pink-600 hover:border-2 hover:text-rose-400 bg-rose-500 text-teal-100 m-5 rounded-md  "
         >
-          Visit Our Github <ArrowRightCircleIcon className="h-10 w-12 inline-block"/>
+          Visit Our Github{" "}
+          <ArrowRightCircleIcon className="h-10 w-12 inline-block" />
         </Link>
-
       </div>
       <div className="xl:w-[1200px] w-full mx-8 xl:mx-auto  my-[120px]  text-rose-500 bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md xl:text-5xl font-bold ">
         <h1 className="text-center">Select Your Topic</h1>
