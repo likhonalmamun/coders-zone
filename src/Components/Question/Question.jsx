@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Question.css";
 
 import {
-  ArrowDownIcon, EyeIcon,
+  ArrowDownIcon,
+  EyeIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
 const Question = ({ questionData, sn, notify }) => {
@@ -15,7 +16,7 @@ const Question = ({ questionData, sn, notify }) => {
 
   return (
     <div className="border-2 rounded-xl duration-300 border-rose-500 py-3 px-2 shadow-xl">
-      <h1 className="text-2xl text-teal-300">
+      <h1 className="text-lg sm:text-2xl text-teal-300">
         {" "}
         Question {sn + 1} : {question}
       </h1>
@@ -36,12 +37,14 @@ const Question = ({ questionData, sn, notify }) => {
       <div className="duration-300">
         <button
           onClick={() => setVisible(!visible)}
-          className=" text-2xl hover:bg-transparent hover:border-2 border-rose-500 duration-200 hover:text-rose-500  block text-center mx-auto rounded-lg py-2 px-7  m bg-rose-600  text-white font-semibold"
+          className="text-lg sm:text-2xl hover:bg-transparent hover:border-2 border-rose-500 duration-200
+           hover:text-rose-500  block text-center mx-auto rounded-lg py-1 sm:py-2  px-7 
+            m bg-rose-600  text-white font-semibold"
         >
           See Answer <EyeIcon className="h-6 w-6 inline-block" />
         </button>
         <h1
-          className={`text-white text-center text-2xl labels block hover:border-y-[1px] ${
+          className={`text-white text-center text-xl sm:text-2xl labels block hover:border-y-[1px] ${
             visible ? "block" : "hidden"
           } hover:text-rose-500 duration-200 rounded-lg  my-3 p-2 mx-5`}
         >
