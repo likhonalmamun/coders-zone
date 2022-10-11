@@ -1,11 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  useParams,
+  parsePath,
+} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Statistics from "./Components/Statistics/Statistics";
 import Error from "./Error";
 import Blogs from "./Components/Blogs/Blogs";
+import QuizPage from "./Components/QuizPage/QuizPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +29,12 @@ const router = createBrowserRouter([
       },
       { path: "/Statistics", element: <Statistics></Statistics> },
       { path: "/Blogs", element: <Blogs></Blogs> },
+      {
+        path: `/Home/:id`,
+        element: <QuizPage></QuizPage>,
+        loader: ({ params }) =>
+          fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
+      },
     ],
   },
 ]);
