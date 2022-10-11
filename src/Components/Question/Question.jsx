@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Question.css";
 
 import {
-  ArrowDownIcon,
+  ArrowDownIcon, EyeIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
 const Question = ({ questionData, sn, notify }) => {
@@ -38,7 +38,7 @@ const Question = ({ questionData, sn, notify }) => {
           onClick={() => setVisible(!visible)}
           className=" text-2xl hover:bg-transparent hover:border-2 border-rose-500 duration-200 hover:text-rose-500  block text-center mx-auto rounded-lg py-2 px-7  m bg-rose-600  text-white font-semibold"
         >
-          See Answer <ArrowDownIcon className="h-6 w-6 inline-block" />
+          See Answer <EyeIcon className="h-6 w-6 inline-block" />
         </button>
         <h1
           className={`text-white text-center text-2xl labels block hover:border-y-[1px] ${

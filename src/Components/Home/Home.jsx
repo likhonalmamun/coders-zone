@@ -7,7 +7,7 @@ const Home = () => {
   // console.log(topics);
   return (
     <>
-      <div className="w-2/3 mx-auto  my-[120px]  text-teal-300 bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md text-7xl font-bold ">
+      <div className="xl:w-[1200px] w-full mx-8 xl:mx-auto  my-[120px]  text-teal-300 bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md xl:text-7xl font-bold ">
         <h1 className="m-5"> Welcome To Our Site . </h1>
         <h1 className="m-5"> Make Your Self More Confident </h1>
         <h1 className="m-5"> About Skills .</h1>
@@ -19,10 +19,10 @@ const Home = () => {
         </Link>
 
       </div>
-      <div className="w-2/3 mx-auto  my-[120px]  text-rose-500 bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md text-5xl font-bold ">
+      <div className="xl:w-[1200px] w-full mx-8 xl:mx-auto  my-[120px]  text-rose-500 bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md xl:text-5xl font-bold ">
         <h1 className="text-center">Select Your Topic</h1>
       </div>
-      <div className="w-2/3 mx-auto  my-[120px] grid grid-cols-4 gap-5  bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md ">
+      <div className="xl:w-[1200px]  w-full mx-8 xl:mx-auto  my-[120px] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5  bg-[rgba(10,20,15,0.6)] p-7 pb-[50px] border-y-2 rounded-xl shadow-md ">
         {topics.map((topic) => (
           <Topic key={topic.id} topic={topic}></Topic>
         ))}
