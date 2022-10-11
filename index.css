@@ -13,7 +13,9 @@
 #root {
   color: #fff;
   transition: all 500 ease;
- 
+}
+* {
+  overflow: hidden;
 }
 
 @tailwind base;
