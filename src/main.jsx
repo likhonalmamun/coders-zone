@@ -4,9 +4,6 @@ import App from "./App";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  useParams,
-  parsePath,
 } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Statistics from "./Components/Statistics/Statistics";

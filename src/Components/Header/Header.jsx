@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/solid";
-import "./Header.css";
 const Header = () => {
   let activeStyle = {
     color: "rgb(244, 63, 94)",

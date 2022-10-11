@@ -38,8 +38,6 @@ const QuizPage = () => {
       return;
     }
   };
-
-  //   console.log(topic);
   return (
     <>
       <ToastContainer

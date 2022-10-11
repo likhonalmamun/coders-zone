@@ -14,7 +14,3 @@
   color: #fff;
   transition: all 500 ease;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import "./Question.css";
 
 import {
-  ArrowDownIcon,
   EyeIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
 const Question = ({ questionData, sn, notify }) => {
-  // console.log(sn);
 
   const { question, options, correctAnswer, id } = questionData;
   const [visible, setVisible] = useState(false);
-
-  // console.log(questionData);
-
   return (
     <div className="border-2 rounded-xl duration-300 border-rose-500 py-3 px-2 shadow-xl">
       <h1 className="text-lg sm:text-2xl text-teal-300">
