@@ -1,52 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Question.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-const Question = ({ questionData, sn }) => {
-  console.log(sn);
+
+import {
+  ArrowDownIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/solid";
+const Question = ({ questionData, sn, notify }) => {
+  // console.log(sn);
+
   const { question, options, correctAnswer, id } = questionData;
-  console.log(questionData);
-  const notify = (option) => {
-    if (option === correctAnswer) {
-      toast.success("Your Answer is correct !!", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      return;
-    } else {
-      toast.error("You have chosen wrong answer", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
-  };
+  const [visible, setVisible] = useState(false);
+
+  // console.log(questionData);
+
   return (
-    <div className="border-2 rounded-xl  border-teal-500 py-3 px-2 shadow-xl">
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <h1 className="text-2xl">
+    <div className="border-2 rounded-xl duration-300 border-rose-500 py-3 px-2 shadow-xl">
+      <h1 className="text-2xl text-teal-300">
         {" "}
         Question {sn + 1} : {question}
       </h1>
@@ -54,8 +23,8 @@ const Question = ({ questionData, sn }) => {
         <h1 className="">
           <input className="radio-btn" type="radio" name={id} id={id + i} />
           <label
-            onClick={() => notify(option)}
-            className="text-teal-300 border-b-[1px] labels block hover:border-y-[1px] hover:text-rose-500 duration-200 rounded-lg  my-3 p-2 mx-5"
+            onClick={() => notify(option, correctAnswer)}
+            className="text-white border-b-[1px] labels block hover:border-y-[1px] hover:text-rose-500 duration-200 rounded-lg  my-3 p-2 mx-5"
             htmlFor={id + i}
           >
             {" "}
@@ -63,6 +32,23 @@ const Question = ({ questionData, sn }) => {
           </label>
         </h1>
       ))}
+
+      <div className="duration-300">
+        <button
+          onClick={() => setVisible(!visible)}
+          className=" text-2xl hover:bg-transparent hover:border-2 border-rose-500 duration-200 hover:text-rose-500  block text-center mx-auto rounded-lg py-2 px-7  m bg-rose-600  text-white font-semibold"
+        >
+          See Answer <ArrowDownIcon className="h-6 w-6 inline-block" />
+        </button>
+        <h1
+          className={`text-white text-center text-2xl labels block hover:border-y-[1px] ${
+            visible ? "block" : "hidden"
+          } hover:text-rose-500 duration-200 rounded-lg  my-3 p-2 mx-5`}
+        >
+          <InformationCircleIcon className="w-5 inline-block h-5" />{" "}
+          {correctAnswer}
+        </h1>
+      </div>
     </div>
   );
 };

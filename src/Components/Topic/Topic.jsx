@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 const Topic = ({ topic }) => {
   const { id, name, logo, total } = topic;
   return (
@@ -17,7 +17,7 @@ const Topic = ({ topic }) => {
           to={`/Home/${id}`}
           className="bg-rose-500 hover:bg-transparent hover:border-2 duration-200 hover:border-rose-600 hover:text-rose-500 py-1 px-3 rounded-md text-teal-100 font-bold"
         >
-          Start Quiz
+          Start Quiz <ArrowRightCircleIcon className="h-5 w-5 inline-block"/>
         </Link>
       </div>
     </div>
